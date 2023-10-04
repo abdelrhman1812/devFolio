@@ -1,0 +1,640 @@
+/* ======================= varibles  ====================== */
+:root {
+  --color-default: #4e4e4e;
+  --color-secondary: #1e1e1e;
+  --color-primary: #0078ff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* ======================= start Target  ====================== */
+body:has(nav:target) nav a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  bottom: 0;
+  transition: all 0.3s;
+}
+body:has(#about:target) nav .about::before {
+  width: 68%;
+}
+body:has(#Services:target) nav .Services::before {
+  width: 68%;
+}
+body:has(#Portfolio:target) nav .Portfolio::before {
+  width: 68%;
+}
+body:has(#blog:target) nav .blog::before {
+  width: 68%;
+}
+body:has(#contact:target) nav .contact::before {
+  width: 68%;
+}
+
+body:has(#about:target) .home::before {
+  background-color: transparent;
+}
+body:has(#Services:target) .home::before {
+  background-color: transparent;
+}
+body:has(#Portfolio:target) .home::before {
+  background-color: transparent;
+}
+body:has(#blog:target) .home::before {
+  background-color: transparent;
+}
+body:has(#contact:target) .home::before {
+  background-color: transparent;
+}
+
+/* ======================= End Target  ====================== */
+
+/* Start Title of section */
+.title-h {
+  font-weight: bold;
+  font-size: 48px;
+  color: var(--color-secondary);
+  margin: 10px 0;
+}
+.title-p {
+  font-size: 16px;
+  color: var(--color-default);
+}
+.line {
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-primary);
+  margin: auto;
+}
+/* End Title */
+
+/* ============================================= */
+
+/* start nav */
+nav {
+  background: rgb(0 0 0 / 56%);
+}
+nav .logo {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+}
+a.nav-link {
+  color: #fff;
+  font-weight: 600;
+  position: relative;
+}
+nav ul li {
+  padding: 10px 0 10px 30px;
+}
+
+.nav-link.active::before {
+  content: "";
+  position: absolute;
+  width: 68%;
+  height: 1px;
+  background-color: #fff;
+  bottom: 0;
+  transition: all 0.3s;
+}
+a.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  bottom: 0;
+  transition: all 0.3s;
+}
+@media (min-width: 992px) {
+  a.nav-link:hover::before {
+    width: 68%;
+  }
+}
+
+a.nav-link:hover {
+  color: #fff;
+}
+
+nav .drop {
+  position: relative;
+}
+nav .drop:hover + ul.deep {
+  display: block;
+}
+ul.deep {
+  background-color: #fff;
+  position: absolute;
+  transform: translate(127px, -0);
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  transition: all 0.2s;
+}
+ul.deep li {
+  padding: 10px 15px;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 67px;
+    right: 0;
+    height: 88vh;
+  }
+  .nav-link.active::before {
+    width: 0%;
+  }
+
+  a.nav-link {
+    color: #1e1e1e;
+  }
+
+  a.nav-link:hover,
+  .nav-link.active:hover {
+    color: var(--color-primary);
+  }
+
+  a.nav-link.active {
+    color: black !important;
+  }
+}
+
+/* nav .dropdown-toggle:hover + .dropdown-menu {
+  display: block;
+}
+nav .dropdown-menu {
+  transform: translate(-20px, 15px);
+} */
+
+/* End nav */
+
+/* =============================================================================== */
+
+/* Start Header */
+header {
+  background-image: url(../image/header.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+header .overlaye {
+  width: 100%;
+  height: 100vh;
+  background-color: #1e1e1e91;
+}
+header .overlaye h1 {
+  font-size: 72px;
+}
+header .overlaye p {
+  font-size: 32px;
+}
+header .overlaye p::after {
+  content: " Designer |";
+  letter-spacing: 2px;
+  animation-name: typing;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes typing {
+  0% {
+    content: "Designer |";
+  }
+  1% {
+    content: "Designer|";
+  }
+  3% {
+    content: "Designe|";
+  }
+  6% {
+    content: "Design|";
+  }
+  9% {
+    content: "Desig|";
+  }
+  12% {
+    content: "Desi|";
+  }
+  15% {
+    content: "Des|";
+  }
+  18% {
+    content: "De|";
+  }
+  21% {
+    content: "D|";
+  }
+  24% {
+    content: "|";
+  }
+
+  27% {
+    content: "D|";
+  }
+  30% {
+    content: "De|";
+  }
+  33% {
+    content: "Deve|";
+  }
+  37% {
+    content: "Devel|";
+  }
+  40% {
+    content: "Develo|";
+  }
+  43% {
+    content: "Develope|";
+  }
+  47% {
+    content: "Developer|";
+  }
+  50% {
+    content: "Developer |";
+  }
+  45% {
+    content: "Developer|";
+  }
+  48% {
+    content: "Develope|";
+  }
+  51% {
+    content: "Develop|";
+  }
+  54% {
+    content: "Develo|";
+  }
+  57% {
+    content: "Devel|";
+  }
+  60% {
+    content: "Deve|";
+  }
+  63% {
+    content: "Dev|";
+  }
+  66% {
+    content: "De|";
+  }
+  69% {
+    content: "D|";
+  }
+  72% {
+    content: "|";
+  }
+  75% {
+    content: "p|";
+  }
+  78% {
+    content: "ph|";
+  }
+  81% {
+    content: "phot|";
+  }
+  84% {
+    content: "photo|";
+  }
+  87% {
+    content: "Photog";
+  }
+  90% {
+    content: "Photogr|";
+  }
+  95% {
+    content: "Photograp|";
+  }
+  100% {
+    content: "Photographer|";
+  }
+}
+/* End Header */
+
+/* =============================================================================== */
+
+/* Start Section About*/
+
+#about {
+  padding: 65px 0 0;
+}
+
+#about .content-about {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 60px 50px;
+}
+
+#about .content-about ul li {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--color-secondary);
+}
+#about .content-about ul li span {
+  color: var(--color-default);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+#about .content-about .skill span {
+  font-size: 16px;
+  color: var(--color-default);
+  margin-top: 20px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.progress {
+  background-color: #cde1f8;
+  border-radius: 0;
+  height: 11px;
+}
+
+#about .about-me h5 {
+  font-size: 32px;
+  color: var(--color-secondary);
+}
+
+#about .line-about {
+  width: 115px;
+  height: 3px;
+  background-color: var(--color-primary);
+}
+
+/* End Section About*/
+
+/* =============================================================================== */
+
+/* Start Section Services  */
+
+#Services {
+  padding: 65px 0 0;
+  padding-bottom: 50px;
+}
+
+#Services .box-services {
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+}
+#Services .box-services h2 {
+  color: var(--color-secondary);
+  font-size: 22px;
+}
+#Services .box-services p {
+  color: var(--color-default);
+  font-size: 16px;
+}
+.icon {
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  box-shadow: 0 0 0 10px #0078ff;
+  color: #777;
+}
+
+#Services .box-services:hover .icon {
+  background-color: #0078ff;
+  box-shadow: 0 0 0 10px #0078ff38;
+}
+#Services i {
+  font-size: 40px;
+}
+
+/* anther Services */
+
+#Services .info-ser {
+  background-image: url(../image/ser.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+#Services .info-ser .over-laye {
+  width: 100%;
+  height: 100%;
+  background-color: #0078ffc4;
+}
+
+#Services .info-ser p {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 0;
+}
+#Services .info-ser span {
+  font-size: 16px;
+  color: #fff;
+}
+#Services .info-ser .icon {
+  box-shadow: 0 0 0 10px #cde1f8;
+  height: 70px;
+  width: 70px;
+}
+#Services .info-ser i {
+  font-size: 30px;
+  color: #fff;
+}
+/* End Section Services  */
+/* =============================================================================== */
+
+/* Start Section Portfolio  */
+
+#Portfolio .box-Portfolio {
+  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+#Portfolio .box-Portfolio .image {
+  overflow: hidden;
+}
+#Portfolio .box-Portfolio:hover img {
+  transform: scale(1.3);
+  transition: all 1s;
+}
+
+#Portfolio .box-Portfolio h2 {
+  font-size: 20px;
+  color: var(--color-secondary);
+}
+#Portfolio .box-Portfolio span {
+  color: var(--color-default);
+}
+#Portfolio .box-Portfolio span a {
+  color: var(--color-default);
+  text-decoration: none;
+  color: #0078ff;
+}
+
+#Portfolio .icon-port {
+  height: 40px;
+  width: 40px;
+  border: 3px solid var(--color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 20px;
+  color: var(--color-primary);
+}
+
+.carousel-indicators [data-bs-target] {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+/* End Section Portfolio  */
+
+/* =============================================================================== */
+
+/* Start Section imploy */
+.imploy {
+  background-image: url(../image/imploy.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.imploy .over-laye {
+  width: 100%;
+
+  background-color: #0078ffc4;
+  display: flex;
+  align-items: center;
+}
+.imploy .over-laye .carousel-indicators {
+  bottom: -50px;
+}
+/* End Section imploy */
+
+/* =============================================================================== */
+/* Start Section BLOG */
+#blog .card a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  font-size: 20px;
+  font-weight: 500;
+}
+#blog .card.info-blog p {
+  color: var(--color-default);
+}
+#blog .card-footer img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+#blog .card {
+  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+/* End Section BLOG */
+
+/* Start Section Contact */
+
+#contact {
+  background-image: url(../image/imploy.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+}
+
+.over-laye {
+  width: 100%;
+  height: 100%;
+  background-color: #0078ffc4;
+  padding: 65px 0;
+}
+
+#contact .box-contact {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 60px 50px;
+}
+@media (max-width: 575px) {
+  #contact .box-contact {
+    padding: 60px 30px;
+  }
+}
+
+#contact .box-contact h5 {
+  font-size: 32px;
+  color: var(--color-secondary);
+}
+
+#contact .box-contact .line {
+  width: 115px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 0;
+}
+
+#contact .box-contact .icons {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 5px solid var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+#contact .box-contact .cont i {
+  color: #0078ff;
+}
+input.btn:hover {
+  box-shadow: 0 0 0 7px #0078ff2e;
+}
+
+#contact .icons:hover {
+  background-color: #0078ff;
+  box-shadow: 0 0 0 7px #0078ff2e;
+}
+/* End Section Contact */
+
+/* =============================================================================== */
+
+/* Start footer */
+
+footer {
+  background-color: #0062d3;
+}
+
+footer span {
+  font-weight: 700;
+}
+
+/* End footer */
+
+/* =============================================================================== */
